@@ -1,0 +1,77 @@
+/* Importation du font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Définir les propriétés racine */
+:root{
+    /* Définir les fonts */
+    --body-font: Poppins,sans-serif;
+
+    --header-height: 3rem;
+
+    /* couleur principale */
+    --hue-color : 200;
+
+    /* HSL color mode */
+    --first-color: hsl(var(var(--hue-color), 15%, 75%)); /* rgb(182, 194, 201) || #b6c2c9 */
+    --first-color-second : hsl(var(--hue-color), 15%, 75%); /* rgb(182, 194, 201) || #b6c2c9 */
+    --first-color-alt: hsl(var(--hue-color), 10%, 60%); /* rgb(143, 156, 163) || #8f9ca3 */
+    --first-color-lighter: hsl(var(--hue-color), 40%, 85%); /* rgb(201, 222, 232) || #c9dee8 */
+    --title-color: hsl(var(--hue-color), 8%, 15%); /* rgb(35, 39, 41) || #232729 */
+    --text-color: hsl(var(--hue-color), 8%, 45%); /* rgb(106, 118, 124) || #6a767c */
+    --text-color-light: hsl(var(--hue-color), 8%, 65%); /* rgb(159, 168, 173) || #9fa8ad */
+    --input-color: hsl(var(--hue-color), 70%, 85%); /* rgb(190, 226, 244) || #bee2f4 */
+    --body-color: hsl(var(--hue-color), 60%, 97%); /* rgb(243, 249, 252) || #f3f9fc */
+    --container-color: #ffffffbb;
+
+    /* Taille des écritures */
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px */
+    --big-font-size: 2rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /* Le poids des textes */
+    /* Font weight */
+    --font-lighter: 300;
+    --font-light: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /* Défintion des marges */
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px */
+    --m-0-25: .25rem;
+    --m-0-5: .5rem;
+    --m-0-75: .75rem;
+    --m-1: 1rem;
+    --m-1-5: 1.5rem;
+    --m-2: 2rem;
+    --m-2-5: 2.5rem;
+    --m-3: 3rem;
+
+    /* Définition des z-index */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+/* font-size pour les écrans plus larges */
+@media screen and (min-width: 968px) {
+    :root{
+        --big-font-size: 3rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*========== Variables pour le Dark Mode ==========*/
+body.dark-theme{
+    /* HSL color mode */
+    --first-color-second: hsl(var(--hue-color), 30%, 8%); /* rgb(14, 22, 27) || #0e161b */
+    --title-color: hsl(var(--hue-color), 8%, 95%); /* rgb(241, 243, 243) || #f1f3f3 */
+    --text-color: hsl(var(--hue-color), 8%, 75%); /* rgb(186, 193, 196) || #bac1c4 */
+    --input-color: hsl(var(--hue-color), 29%, 16%); /* rgb(29, 45, 53) || #1d2d35 */
+    --body-color: hsl(var(--hue-color), 28%, 12%); /* rgb(22, 33, 39) || #162127 */
+    --container-color: hsl(var(--hue-color), 29%, 16%); /* rgb(29, 45, 53) || #1d2d35 */
+}
