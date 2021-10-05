@@ -20,8 +20,8 @@
     --text-color: hsl(var(--hue-color), 8%, 45%); /* rgb(106, 118, 124) || #6a767c */
     --text-color-light: hsl(var(--hue-color), 8%, 65%); /* rgb(159, 168, 173) || #9fa8ad */
     --input-color: hsl(var(--hue-color), 70%, 85%); /* rgb(190, 226, 244) || #bee2f4 */
-    --body-color: hsl(var(--hue-color), 60%, 97%); /* rgb(243, 249, 252) || #f3f9fc */
-    --container-color: #ffffffbb;
+    --body-color: hsl(var(--hue-color), 60%, 92%); /* rgb(222, 239, 247) || #deeff7 */
+    --container-color: #ffffffec;
 
     /* Taille des écritures */
     /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px */
@@ -85,9 +85,207 @@ body.dark-theme{
 /* changement de mode effet */
 .change-mode{
     font-size: 1.25rem;
+    margin-right: var(--m-1);
     color: var(--title-color);
+    border-radius: 50%;
+    background-color: #ffc77c;
+    padding: .15rem;
+    box-shadow: -1px -1px 2px rgb(255, 255, 255), 1px 2px 2px black;
 }
 
 .change-mode:hover{
+    cursor: pointer;
+    box-shadow: -1px -1px 2px rgb(240, 235, 235) inset, 1.5px 1.5px 2px black inset;
+}
+
+/*====== BASE =====*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    /* margin : var(--header-height); */
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1,h2,h3,h4{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img, video{
+    max-width: 100%;
+    max-height: 650px;
+    width: 100%;
+}
+
+.banner__container{
+    background-color: #fff;
+}
+
+.section{
+    padding: 1.5rem;
+}
+
+.container{
+    max-width: 768px;
+    margin-left: var(--m-1-5);
+    margin-right: var(--m-1-5);
+    height: 90vh;
+}
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+/* envoyer le header au bas de la page */
+.header{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--container-color);
+}
+
+.nav{
+    max-width: none;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Changer la couleur du texte du logo et icons */
+.nav__logo,
+.nav__toggle{
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+/* Hover sur le logo */
+.nav__logo:hover{
+    color: var(--first-color)
+}
+
+/* Button application */
+.nav__toggle{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* Hover button application */
+.nav__toggle:hover{
     color: var(--first-color);
+}
+
+/* Cacher les options de menu lorsqu'on est à moins de 768px */
+@media screen and (max-width: 767px){
+    .nav__menu{
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body-color);
+        padding: 2rem 1.5rem 3rem;
+        box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.5);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .5s;
+    }
+}
+
+/* disposition des liens */
+.nav__list{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Disposition des icons par rapport aux liens (texte) */
+.nav__link{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+.nav__link:hover{
+    color: var(--first-color);
+}
+
+/* augmenter la taille des icons */
+.nav__icon{
+    font-size: 1.2rem;
+}
+
+/* Buton qui permet de fermer le menu */
+.nav__close{
+    position: absolute;
+    right: 1.3rem;
+    bottom: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--first-color)
+    
+}
+
+.nav__close:hover{
+    color: rgba(255, 10, 10, 0.753)
+}
+
+/************ Show Menu **************/
+/* ceci est la propriét qui nous permettra de voir le menu plus tard */
+.show-menu{
+    bottom:0;
+    padding:0;
+}
+
+.banner{
+    margin:0;
+    padding: 0;
+}
+
+@media only screen and (min-width:768px){
+    .header{
+        top: 0;
+        bottom: initial;
+        background-color: var(--body-color)
+    }
+
+    .banner{
+        margin-top: var(--header-height)
+    }
+
+    /* Cacher les icons */
+    .nav__icon,
+    .nav__close,
+    .nav__toggle{
+        display: none;
+    }
+
+    /* derouler la liste */
+    .nav__list{
+        display: flex;
+    }
+
 }
