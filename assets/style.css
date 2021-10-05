@@ -75,3 +75,19 @@ body.dark-theme{
     --body-color: hsl(var(--hue-color), 28%, 12%); /* rgb(22, 33, 39) || #162127 */
     --container-color: hsl(var(--hue-color), 29%, 16%); /* rgb(29, 45, 53) || #1d2d35 */
 }
+
+/* Définir tous les bouttons en diplay flex */
+.nav__btns{
+    display: flex;
+    align-items: center;
+}
+
+/* changement de mode effet */
+.change-mode{
+    font-size: 1.25rem;
+    color: var(--title-color);
+}
+
+.change-mode:hover{
+    color: var(--first-color);
+}

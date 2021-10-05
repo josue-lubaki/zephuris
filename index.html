@@ -4,12 +4,67 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Unicons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+
     <!-- Importation de la feuille de style -->
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Zephuris</title>
   </head>
   <body>
-    <p>Lorem ipsum dolor sit amet,</p>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">Zephuris</a>
+        <div class="nav__menu" id="nav-menu">
+          <!-- Liste des options du menu -->
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="uil uil-estate nav__icon"> Accueil</i>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="uil uil-briefcase-alt nav__icon"> Services</i>
+              </a>
+            </li>
+          </ul>
+          <i class="uil uil-times nav__close" id="nav-close"></i>
+        </div>
+
+        <div class="nav__btns">
+          <!-- Bouton pour changer le mode -->
+          <i class="uil uil-moon change-mode" id="theme-button"></i>
+
+          <!-- Button Application -->
+          <div class="nav__toggle">
+            <i class="uil uil-apps"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="banner section" id="banner-making-order">
+        <video
+          src="./assets/videos/man-making-food.mp4"
+          autoplay="true"
+          loopback="true"
+        ></video>
+      </section>
+
+      <section class="meal section" id="meal-section">
+        <ul class="meals__list" id="result-meal">
+          <li>
+            <h3>Changement...</h3>
+          </li>
+        </ul>
+      </section>
+    </main>
     <!-- Importation de la feuille des scripts -->
     <script type="text/javascript" src="./assets/script.js" defer></script>
   </body>
