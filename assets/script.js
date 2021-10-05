@@ -87,11 +87,11 @@ const result = document.getElementById("result-meal"),
         listItems.push(li);
 
         li.innerHTML = `
-          <div class="card">
+          <div class="card grid">
             <img src="${meal.strMealThumb}" alt="photo de ${meal.strMeal}">
             <div class="card__info">
-                <p><b>${meal.strMeal}</b> est un plat d'origine ${meal.strArea}, qui se classe dans la categorie ${meal.strCategory}</p>
-                <p>Voici comment le cuisiner : <br/> ${meal.strInstructions}</p>
+                <p><b>${meal.strMeal}</b> est un plat d'origine ${meal.strArea}, qui se classe dans la categorie ${meal.strCategory}</p><br/>
+                <p><b>Instructions :</b> <br/> ${meal.strInstructions}</p>
             </div>
           </div>
           `;
