@@ -68,3 +68,35 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("Zephuris-selected-theme", getCurrentTheme());
   localStorage.setItem("Zephuris-selected-icon", getCurrentIcon());
 });
+
+// Récupération des aliments via
+const result = document.getElementById("result-meal"),
+  listItems = [];
+
+(function getData() {
+  fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
+    .then((response) => response.json())
+    .then((data) => {
+      // supprimer le contenu de la liste de notre HTML
+      result.innerHTML = "";
+
+      data.meals.forEach((meal) => {
+        let li = document.createElement("li");
+
+        //   Ajouter l'élement "li" dans le tableau
+        listItems.push(li);
+
+        li.innerHTML = `
+          <div class="card">
+            <img src="${meal.strMealThumb}" alt="photo de ${meal.strMeal}">
+            <div class="card__info">
+                <p><b>${meal.strMeal}</b> est un plat d'origine ${meal.strArea}, qui se classe dans la categorie ${meal.strCategory}</p>
+                <p>Voici comment le cuisiner : <br/> ${meal.strInstructions}</p>
+            </div>
+          </div>
+          `;
+
+        result.appendChild(li);
+      });
+    });
+})();
