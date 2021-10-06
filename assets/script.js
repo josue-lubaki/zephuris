@@ -81,22 +81,25 @@ const result = document.getElementById("result-meal"),
       result.innerHTML = "";
 
       data.meals.forEach((meal) => {
-        let li = document.createElement("li");
+        //   Ne prendre que les resultats des repas dont la taille des Instructions est inférieur à 600
+        if (meal.strInstructions.length < 600) {
+          let li = document.createElement("li");
 
-        //   Ajouter l'élement "li" dans le tableau
-        listItems.push(li);
+          //   Ajouter l'élement "li" dans le tableau
+          listItems.push(li);
 
-        li.innerHTML = `
+          li.innerHTML = `
           <div class="card grid">
             <img src="${meal.strMealThumb}" alt="photo de ${meal.strMeal}">
             <div class="card__info">
-                <p><b>${meal.strMeal}</b> est un plat d'origine ${meal.strArea}, qui se classe dans la categorie ${meal.strCategory}</p><br/>
+                <p><b>${meal.strMeal}</b> is a dish of <i>${meal.strArea}</i> origin, which falls under the <u>${meal.strCategory}</u> category</p><br/>
                 <p><b>Instructions :</b> <br/> ${meal.strInstructions}</p>
             </div>
           </div>
           `;
 
-        result.appendChild(li);
+          result.appendChild(li);
+        }
       });
     });
 })();
