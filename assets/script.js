@@ -74,7 +74,7 @@ const result = document.getElementById("result-meal"),
   listItems = [];
 
 (function getData() {
-  fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
+  fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
     .then((response) => response.json())
     .then((data) => {
       // supprimer le contenu de la liste de notre HTML

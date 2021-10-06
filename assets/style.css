@@ -232,7 +232,7 @@ img, video{
     flex-direction: column;
     align-items: center;
     font-size: var(--small-font-size);
-    color: var(--link-color);
+    color: var(--first-color);
     font-weight: var(--font-semi-bold);
     transition: 0.5s;
 }
@@ -315,6 +315,15 @@ img, video{
     margin: 1rem auto;
     text-align: justify;
 
+}
+
+#upBtn{
+    position: fixed;
+    bottom: 4rem;
+    right: 2rem;
+    font-size: 2rem;
+    z-index:var(--z-fixed);
+    color:var(--logo-color) !important;
 }
 
 @media only screen and (max-width: 768px) {
