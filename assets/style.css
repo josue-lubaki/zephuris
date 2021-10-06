@@ -20,7 +20,7 @@
     --text-color-light: hsl(var(--hue-color), 8%, 65%);
     --input-color: hsl(var(--hue-color), 70%, 85%);
     --body-color: hsl(var(--hue-color), 64%, 57%);
-    --container-color: #ffffffec;
+    --container-color: #ffffff;
     --logo-color: hsl(39, 100%, 71%);
     --link-color: hsl(var(--hue-color), 35%, 20%);
 
@@ -305,14 +305,15 @@ img, video{
     padding: 2rem;
     border: .5rem solid #fff;
     margin: 1rem auto;
+    background-color: var(--first-color-alt);
 }
 
 .meals__list{
     display: flex;
     flex-direction: column;
-    background-color: var(--first-color-alt);
     width:75%;
     margin: 1rem auto;
+    text-align: justify;
 
 }
 
@@ -322,6 +323,25 @@ img, video{
     }
 
     .card img{
-        width: 60%;
+        max-width: 400px;
     }
+
+    .section{
+        padding: 0;
+    }
+
+    .meals__list{
+        width: 95%;
+        margin : 0 auto;
+    }
+
+    .meals__list:last-child{
+        margin-bottom: calc(var(--header-height) - 1rem);
+    }
+
+    .meals__list p,
+    .meals__list li{
+        padding: 0.5rem;
+    }
+
 }
